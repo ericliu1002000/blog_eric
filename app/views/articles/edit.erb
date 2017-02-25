@@ -1,0 +1,16 @@
+<%
+  @articles.each do |article|
+%>
+
+    <p>
+    <%= article.id %> <br/>
+      <%= article.title %>  <%= link_to '查看', article_path(article) %> <br/>
+      <%= article.content %>
+
+    </p>
+
+<%
+  end
+%>
+
+<%= link_to 'new blog', new_article_path %>
