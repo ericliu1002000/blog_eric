@@ -1,0 +1,39 @@
+<% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%=  pluralize @article.errors.count, 'error' %> prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= form_for :article, url: articles_path do |f| %>
+    <p>
+      <%= f.label 'title:' %>
+      <%= f.text_field 'title', value: 'Please input title here', size: '60' %>
+    </p>
+
+    <p>
+      <%= f.label 'tags:' %>
+      <%= f.text_field 'tags', value: 'Please input tags', size: 60 %>
+    </p>
+
+    <p>
+      <%= f.label 'content:' %>
+      <%= f.text_area 'content', value: 'Please input content', cols: 80, rows: 20 %>
+    </p>
+
+    <p>
+      <%= f.label 'password:' %>
+      <%= password_field :other, :password %>
+    </p>
+
+    <p>
+      <%= f.submit 'publish' %>
+    </p>
+<% end %>
+

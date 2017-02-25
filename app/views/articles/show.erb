@@ -1,1 +1,19 @@
-haha, i an index
+<p>
+  <%= @article.title %>
+</p>
+
+<p>
+  <%= @article.content %>
+</p>
+
+<h2>
+  我要评论:
+</h2>
+<%= render "comments/form" %>
+
+<h2>
+  评论:
+</h2>
+<%= render @article.comments.order(id: :desc)  %>
+
+<%= link_to '返回', controller: 'articles' %>

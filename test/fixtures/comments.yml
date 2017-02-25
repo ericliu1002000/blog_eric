@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commenter: MyString
+  content: MyString
+  article: one
+  is_delete: false
+  floor_number: 1
+
+two:
+  commenter: MyString
+  content: MyString
+  article: two
+  is_delete: false
+  floor_number: 1

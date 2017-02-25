@@ -1,0 +1,20 @@
+<%
+  @articles.each do |article|
+%>
+
+    <p>
+      <%= article.id %> <br/>
+      <%= article.title %>
+      <%= link_to '查看', article_path(article) %>
+      <%= link_to '修改', edit_article_path(article) %>
+      <%= link_to '删除', article_path(article), method: :delete, data: {confirm: 'are you sure?'} %>
+      <br/>
+      <%= article.content %>
+
+    </p>
+
+<%
+  end
+%>
+
+<%= link_to 'new blog', new_article_path %>
